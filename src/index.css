@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Base resets & custom smooth scroll */
+html {
+  scroll-behavior: smooth;
+  background-color: #050816;
+  color: #ffffff;
+}
+
+body {
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom aesthetic glow systems & backdrop effects */
+.glow-cyan {
+  box-shadow: 0 0 25px rgba(0, 212, 255, 0.15);
+}
+
+.glow-cyan-strong {
+  box-shadow: 0 0 40px rgba(0, 212, 255, 0.35);
+}
+
+/* Custom premium hover actions */
+.hover-glow:hover {
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.25);
+  border-color: rgba(0, 212, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Dynamic scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #03050f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 212, 255, 0.15);
+  border-radius: 9999px;
+  border: 2px solid #03050f;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 212, 255, 0.4);
+}
+
+/* Animations helpers */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Apply display typography pairs directly of headings */
+h1, h2, h3 {
+  font-family: var(--font-display);
+}
+
+/* Print optimizations for resume generation */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  
+  #main-nav, #ai-assistant, #blogs-medium-cta-banner, #app-footer, #contact {
+    display: none !important;
+  }
+  
+  #portfolio-root {
+    background: #ffffff !important;
+    padding: 20px !important;
+  }
+
+  h1, h2, h3, p, span, li {
+    color: #000000 !important;
+  }
+
+  .rounded-2xl, .rounded-3xl, .rounded-xl {
+    border-radius: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    padding: 10px 0 !important;
+  }
+
+  .border-l {
+    border-left: 2px solid #ccc !important;
+  }
+}
