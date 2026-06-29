@@ -12,6 +12,7 @@ import Skills from "./components/Skills";
 import Experience from "./components/Experience";
 import Blogs from "./components/Blogs";
 import GithubShowcase from "./components/GithubShowcase";
+import LeetCodeShowcase from "./components/LeetCodeShowcase";
 import Contact from "./components/Contact";
 import AiAssistant from "./components/AiAssistant";
 import { Cpu, Mail, Sparkles, Code2 } from "lucide-react";
@@ -138,6 +139,7 @@ export default function App() {
         <Experience />
         <Blogs />
         <GithubShowcase />
+        <LeetCodeShowcase />
         <Contact />
       </main>
 
