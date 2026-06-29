@@ -23,69 +23,7 @@ export default function GithubShowcase() {
     fetchGitHubData();
   }, []);
 
-  // Handcraft a beautiful, futuristic commitment density map grid
-  // 53 columns representing weeks, 7 rows representing days
-  const renderContributionGrid = () => {
-    const weeksCount = 44; // Trimmed for compact visual density layout on web grids
-    const rows = 7;
-    const items = [];
-    
-    // Seed high-density contributions randomly for visual appeal
-    for (let i = 0; i < weeksCount * rows; i++) {
-      let level = 0; // Off
-      const rand = Math.random();
-      if (rand > 0.85) level = 4; // High density (bright neon green)
-      else if (rand > 0.65) level = 3; // Medium density
-      else if (rand > 0.4) level = 2; // Low density
-      else if (rand > 0.15) level = 1; // Subtle accent
-
-      items.push(level);
-    }
-
-    const getColorClass = (level: number) => {
-      switch (level) {
-        case 4: return "bg-emerald-400 shadow-[0_0_6px_#34d399]";
-        case 3: return "bg-emerald-500/80";
-        case 2: return "bg-emerald-600/50";
-        case 1: return "bg-emerald-700/20";
-        default: return "bg-white/[0.03]";
-      }
-    };
-
-    return (
-      <div className="flex flex-col gap-1 w-full overflow-x-auto select-none mt-4 border border-white/5 p-4 rounded-xl bg-[#090D22]">
-        <div className="flex items-center justify-between text-[10px] font-mono text-[#A0AEC0] mb-3">
-          <span className="flex items-center gap-1.5"><Activity className="w-3.5 h-3.5 text-emerald-400" /> Commit Density (1,540+ past year)</span>
-          <div className="flex items-center gap-1">
-            <span>Less</span>
-            <span className="w-2h-2 w-2 h-2 rounded bg-white/[0.03]" />
-            <span className="w-2h-2 w-2 h-2 rounded bg-emerald-700/20" />
-            <span className="w-2h-2 w-2 h-2 rounded bg-emerald-600/50" />
-            <span className="w-2h-2 w-2 h-2 rounded bg-emerald-500/80" />
-            <span className="w-2h-2 w-2 h-2 rounded bg-emerald-400 shadow-[0_0_6px_#34d399]" />
-            <span>More</span>
-          </div>
-        </div>
-        <div className="grid grid-flow-col gap-1 auto-cols-max">
-          {Array.from({ length: weeksCount }).map((_, wIdx) => (
-            <div key={wIdx} className="grid grid-rows-7 gap-1">
-              {Array.from({ length: rows }).map((_, rIdx) => {
-                const cellIndex = wIdx * rows + rIdx;
-                const level = items[cellIndex];
-                return (
-                  <div
-                    key={rIdx}
-                    className={`w-2.5 h-2.5 rounded-sm transition-colors duration-500 hover:scale-125 ${getColorClass(level)}`}
-                    title={`Commits registered: ${level * 3} at day code`}
-                  />
-                );
-              })}
-            </div>
-          ))}
-        </div>
-      </div>
-    );
-  };
+  // Contribution grid removed per user request (Annual Activity / Commit density)
 
   const getLanguageColor = (lang: string) => {
     switch (lang) {
@@ -192,16 +130,7 @@ export default function GithubShowcase() {
               </div>
             </div>
 
-            {/* Contribution chart */}
-            <div className="mt-4 border-t border-white/5 pt-6 flex flex-col">
-              <div className="flex items-center justify-between">
-                <span className="font-sans text-xs font-semibold text-white">Annual Activity</span>
-                <span className="font-mono text-[10px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
-                  {profile.contributionsCount} Commits
-                </span>
-              </div>
-              {renderContributionGrid()}
-            </div>
+            {/* Annual Activity removed per user request */}
           </div>
 
           {/* Repositories display panel */}
