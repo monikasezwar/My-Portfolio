@@ -109,7 +109,7 @@ export default function GithubShowcase() {
               {profile.bio}
             </p>
 
-            <div className="flex items-center gap-2 text-[10px] font-mono text-[#A0AEC0] mt-3">
+            <div className="flex items2 text-[10px] font-mono text-[#A0AEC0] mt-3">
               <MapPin className="w-3.5 h-3.5 text-[#00D4FF]" />
               <span>{profile.location}</span>
             </div>
@@ -155,7 +155,7 @@ export default function GithubShowcase() {
                         {repo.name}
                       </span>
                     </div>
-                    <ArrowUpRight className="w-4 h-4 text-[#A0AEC0] group-hover:text-white transition-opacity translate-x-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    <ArrowUpRight className="w-4 h-4 text-[#A0AEC0]:text-white transition-opacity translate-x-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </div>
 
                   <p className="font-sans text-[11px] text-[#A0AEC0] mt-3 leading-relaxed flex-grow">
