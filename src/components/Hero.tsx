@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Download, Mail, ChevronRight, Linkedin, Github, BookOpen, Smartphone, Activity, ShieldCheck } from "lucide-react";
+import myPhoto from "../assets/images/myjpgphoto.jpg";
 
 interface HeroProps {
   onNavClick: (sectionId: string) => void;
@@ -162,7 +163,7 @@ export default function Hero({ onNavClick }: HeroProps) {
             {/* Glowing framing container */}
             <div className="absolute inset-4 rounded-full border-4 border-[#00D4FF]/20 overflow-hidden shadow-2xl shadow-black/80">
               <img
-                src="/src/assets/images/myphoto.jpeg"
+                src={myPhoto}
                 alt="Monika Sezwar Profile"
                 className="w-full h-full object-cover grayscale-[30%] hover:scale-105 hover:grayscale-0 transition-all duration-750"
                 referrerPolicy="no-referrer"

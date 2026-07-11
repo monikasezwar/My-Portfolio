@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Github, Star, GitFork, Users, BookOpen, Activity, ArrowUpRight, ShieldCheck, MapPin } from "lucide-react";
 import { GitHubStats } from "../types";
+import myPhoto from "../assets/images/myjpgphoto.jpg";
 
 export default function GithubShowcase() {
   const [data, setData] = useState<GitHubStats | null>(null);
@@ -47,10 +48,12 @@ export default function GithubShowcase() {
   const profile = data?.profile || {
     username: "monikasezwar",
     name: "Monika Sezwar",
-    avatarUrl: "/src/assets/images/myprofessionalphoto.jpeg",
+    avatarUrl: myPhoto,
+    bio: "Android architect building secure fintech applications and native product experiences.",
     publicRepos: 48,
     starsCount: 186,
     contributionsCount: 1542,
+    followers: 0,
     location: "India / Global Placement"
   };
 
@@ -93,7 +96,7 @@ export default function GithubShowcase() {
             <div className="flex items-center gap-4">
               <div className="relative w-16 h-16 rounded-full border border-[#00D4FF]/30 overflow-hidden">
                 <img
-                  src={profile.avatarUrl || "/src/assets/images/myprofessionalphoto.jpeg"}
+                  src={profile.avatarUrl}
                   alt={profile.name}
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
